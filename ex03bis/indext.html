@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To do or not to do (jQuery)</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <style>
+        body { font-family: sans-serif; padding: 20px; }
+        #ft_list { margin-top: 20px; border: 1px solid #ccc; min-height: 50px; }
+        .todo-item { 
+            padding: 10px; 
+            border-bottom: 1px solid #eee; 
+            cursor: pointer; 
+            background: #f9f9f9;
+        }
+        .todo-item:hover { background: #fee; }
+    </style>
+</head>
+<body>
+
+    <button id="new_btn">New</button>
+    <div id="ft_list"></div>
+
+    <script>
+        $(document).ready(function() {
+            function addTodo(text) {
+                const newDiv = $('<div></div>').text(text).addClass('todo-item');
+                
+                newDiv.on('click', function() {
+                    if (confirm("Do you really want to delete this task?")) {
+                        $(this).remove();
+                    }
+                });
+
+                $('#ft_list').prepend(newDiv);
+            }
+
+            $('#new_btn').on('click', function() {
+                const task = prompt("Enter your new task:");
+                if (task !== null && task.trim() !== "") {
+                    addTodo(task);
+                }
+            });
+        });
+    </script>
+</body>
+</html>
