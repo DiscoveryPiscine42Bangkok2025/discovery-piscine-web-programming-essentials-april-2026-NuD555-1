@@ -1,0 +1,51 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+}
+
+.parallax {
+   
+    background-attachment: fixed;
+
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+    height: 100vh;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.img1 {
+    background-image: url('https://static0.srcdn.com/wordpress/wp-content/uploads/2026/01/mabel-and-lizard-in-hoppers.jpg?q=70&fit=crop&w=1600&h=900&dpr=1');
+}
+
+.img2 {
+    background-image: url('https://discussingfilm.net/wp-content/uploads/2026/02/Hoppers-Beaver-Mabel-1024x576.jpg.webp');
+}
+
+.black-block {
+    height: 400px;
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    text-align: center;
+    padding: 20px;
+}
+
+.caption {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 20px;
+    font-size: 30px;
+    border-radius: 10px;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+}
