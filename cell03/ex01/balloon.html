@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explode this balloon</title>
+    <style>
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+
+        #balloon {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="balloon"></div>
+
+    <script>
+        const balloon = document.getElementById('balloon');
+        let size = 200;
+        const colors = ['red', 'green', 'blue'];
+        let colorIndex = 0;
+
+        function updateBalloon() {
+            balloon.style.width = size + 'px';
+            balloon.style.height = size + 'px';
+            balloon.style.backgroundColor = colors[colorIndex];
+        }
+
+        balloon.addEventListener('click', function() {
+            size += 10;
+            
+            colorIndex = (colorIndex + 1) % colors.length;
+
+            if (size > 420) {
+                size = 200;
+                colorIndex = 0;
+            }
+            updateBalloon();
+        });
+
+        balloon.addEventListener('mouseleave', function() {
+            if (size > 200) {
+                size -= 5;
+            }
+
+            colorIndex = (colorIndex - 1 + colors.length) % colors.length;
+            
+            updateBalloon();
+        });
+    </script>
+
+</body>
+</html>
