@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>เลือกชุดไปประชุมให้อนุทิน</title>
+    <link rel="stylesheet" href="menu.css">
+</head>
+<body>
+    <div class="menu-container">
+        <label for="outfit-select">เลือกชุดไปประชุมให้อนุทิน:</label>
+        
+        <select id="outfit-select">
+            <option value="1">1. บิกินีสุดยั่ว</option>
+            <option value="2">2. ชุดเมดสาวโมเอะ</option>
+            <option value="3">3. ชุดเซ็ททรงซ้อ</option>
+        </select>
+
+        <div id="display-text"></div>
+    </div>
+    <script>
+        const select = document.getElementById('outfit-select');
+        const display = document.getElementById('display-text');
+
+        select.addEventListener('change', function() {
+            const value = this.value;
+            if (value === "1") {
+                display.innerText = "คุณเลือก: บิกินีสุดยั่ว";
+            } else if (value === "2") {
+                display.innerText = "คุณเลือก: ชุดเมดสาวโมเอะ";
+            } else if (value === "3") {
+                display.innerText = "คุณเลือก: ชุดเซ็ททรงซ้อ";
+            } else {
+                display.innerText = "";
+            }
+        });
+    </script>
+    
+</body>
+</html>
